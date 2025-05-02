@@ -24,7 +24,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
       schema: feedbackSchema,
       prompt: `
         You are an AI interviewer analyzing a mock interview. Your task is to evaluate the candidate based on structured categories. Be thorough and detailed in your analysis. Don't be lenient with the candidate. If there are mistakes or areas for improvement, point them out.
-        Transcript:
+        Transcript, Also< don't mention the word "transcript" in your answer. Use the 2nd person "you" to refer to the candidate:
         ${formattedTranscript}
 
         Please score the candidate from 0 to 100 in the following areas. Do not add categories other than the ones provided:
