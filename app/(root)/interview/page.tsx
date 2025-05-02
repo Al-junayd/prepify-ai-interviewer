@@ -12,7 +12,7 @@ const Page = async () => {
         userName={user?.name as string}
         userId={user?.id}
         type="generate"
-      />{" "}
+      />
     </>
   );
 };
