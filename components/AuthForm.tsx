@@ -136,8 +136,11 @@ const AuthForm = ({ type }: { type: FormType }) => {
             />
 
             <Button className="btn" type="submit" disabled={isLoading}>
-              {isLoading && "Submitting..."}
-              {!isLoading && isSignIn ? "Sign in" : "Create an Account"}
+              {isLoading
+                ? "Submitting..."
+                : isSignIn
+                ? "Sign in"
+                : "Create an Account"}
             </Button>
           </form>
         </Form>
