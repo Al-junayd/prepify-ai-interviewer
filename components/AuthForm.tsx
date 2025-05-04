@@ -39,6 +39,8 @@ const AuthForm = ({ type }: { type: FormType }) => {
     },
   });
 
+  const isLoading = form.formState.isSubmitting;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       if (type === "sign-up") {
@@ -133,8 +135,9 @@ const AuthForm = ({ type }: { type: FormType }) => {
               type="password"
             />
 
-            <Button className="btn" type="submit">
-              {isSignIn ? "Sign in" : "Create an Account"}
+            <Button className="btn" type="submit" disabled={isLoading}>
+              {isLoading && "Submitting..."}
+              {!isLoading && isSignIn ? "Sign in" : "Create an Account"}
             </Button>
           </form>
         </Form>
